@@ -1,0 +1,113 @@
+/*
+ *  Reset
+ */
+
+h1, h2, h3, h4, h5, h6, p, div, span, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ *  General
+ */
+
+#appContent {
+    width: 600px;
+    margin: 0 auto;
+}
+
+#mainContainer {
+    background-color: #ffffaa;
+}
+
+/*
+ *  Navigation
+ */
+
+ul#mainMenu {
+    list-style: none;
+    margin: 5px;
+    margin-left: 10px;
+    padding: 0;
+}
+
+ul#mainMenu li {
+    display: inline-block;
+}
+
+ul#mainMenu li a {
+    color: #666666;
+    font-size: 80%;
+    text-decoration: none;
+}
+
+ul#mainMenu li a:hover {
+    text-decoration: underline;
+}
+
+/*
+ *  Admin
+ */
+#wordClassList li {
+    margin: 5px 0;
+    list-style: none;
+}
+
+#wordClassList .expressionTypeLabel {
+    color: #666666;
+    font-size: 50%;
+    text-transform: uppercase;
+}
+
+#expressionTypefilterList li {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px 5px 5px 0px;
+    cursor: pointer;
+    font-size: 70%;
+}
+
+#expressionTypefilterList li:hover {
+    background-color: #000000;
+    color: #ffffaa;
+}
+
+#expressionTypefilterList li.selected {
+    color: #ffffaa;
+    background-color: #000000;
+
+}
+
+/*
+ *  Headline
+ */
+
+.headlineContainer {
+    margin: 10px;
+    margin-top: 0px;
+}
+
+.headlineContainer h1 {
+    font-family: Times, "Times New Roman", Georgia, serif;
+    margin: 0px 0px;
+    padding: 4px;
+    background-color: #ff0000;
+    color: #ffffaa;
+    text-shadow: 1px 1px #000000, 2px 2px #000000, 3px 3px #000000, 4px 4px #000000;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.headlineContainer .alertHeader {
+    text-align: center;
+    background: #000000;
+    color: #ffffaa;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.headlineContainer .headline {
+    color: #000000;
+    font-size: 200%;
+    line-height: 120%;
+}

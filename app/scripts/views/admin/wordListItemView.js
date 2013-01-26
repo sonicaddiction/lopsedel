@@ -12,8 +12,8 @@ define(['jquery',
         events: {
             'dblclick .expression': 'showEditable',
             'keypress .rewrite': 'updateCallback',
-            'click .delete': 'deleteCallback'
-            //'blur .rewrite': 'unedit'
+            'click .delete': 'deleteCallback',
+            'click .preview': 'previewCallback'
         },
 
         initialize: function () {
@@ -22,12 +22,20 @@ define(['jquery',
             this.model.bind('remove', this.unrender, this);
             this.model.bind('change', this.render, this);
 
-            _.bindAll(this, 'render', 'showEditable', 'updateCallback', 'deleteCallback', 'unedit');
+            _.bindAll(this, 'render', 'showEditable', 'updateCallback', 'deleteCallback', 'previewCallback');
         },
 
-        unedit: function () {
-            this.$el.find('.edit').hide();
-            this.$el.find('.expression').show();
+        previewCallback: function () {
+            var expression = this.model.get('expression');
+
+            $.get('http://localhost:8080/db/sentence', {
+                expression: expression
+            }).done(function (sentence) {
+
+                $('#exampleSentence').html(sentence.headline);
+            });
+
+
         },
 
         unrender: function () {
@@ -72,9 +80,11 @@ define(['jquery',
         },
 
         render: function () {
-            var name = this.model.get('expression');
-
-            var compiledTemplate = _.template(adminTemplate, this.model.toJSON());
+            var escapedModel = {
+                expression: this.model.escape('expression'),
+                expressionType: this.model.escape('expressionType')
+            };
+            var compiledTemplate = _.template(adminTemplate, escapedModel);
 
             this.$el.html(compiledTemplate);
             this.$el.addClass(this.model.get('expressionType'));

@@ -1,5 +1,6 @@
 <span class="expression"><%= expression %></span>
-<span class="edit">
-    <input class="rewrite" type="text" value="<%= expression %>"/>
-    <button class="delete">Ta bort</button>
-</span>
+<div class="edit form-inline">
+    <input class="span6 rewrite" type="text" value="<%= expression %>"/>
+    <button class="btn-danger delete"><i class="icon-trash icon-white" ></i> Ta bort</button>
+    <button class="btn-primary preview"><i class="icon-search icon-white" ></i> Förhandsgranska</button>
+</div>

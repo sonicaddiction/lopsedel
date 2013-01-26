@@ -1,5 +1,4 @@
 /*global define: false */
-/*jslint nomen: true */
 
 define(['jquery',
     'underscore',
@@ -63,11 +62,12 @@ define(['jquery',
         },
 
         filter: function (event) {
+            event.preventDefault();
             var element = $(event.currentTarget);
             var type = element.data('type');
 
-            element.addClass('selected');
-            element.siblings().removeClass('selected');
+            element.addClass('active');
+            element.siblings().removeClass('active');
 
             this.$el.find('#addExpressionGroup').data('expressionType', type);
 
@@ -82,7 +82,7 @@ define(['jquery',
 
                 _.each(expressionTypes.results, function (expressionType) {
                     that.$el.find('#expressionTypefilterList').append(
-                        '<li class="expressionType" data-type="' + expressionType + '">' + expressionType + '</li>');
+                        '<li class="expressionType" data-type="' + expressionType + '"><a href="#">' + expressionType + '</a></li>');
                 });
             });
         },

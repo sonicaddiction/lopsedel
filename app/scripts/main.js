@@ -6,6 +6,9 @@ require.config({
         'backbone': {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
+        },
+        'bootstrap': {
+            deps: ['jquery']
         }
     },
 
@@ -14,11 +17,12 @@ require.config({
         underscore: 'vendor/underscore',
         backbone: 'vendor/backbone',
         text: 'vendor/text',
-        templates: '../templates/'
+        templates: '../templates/',
+        bootstrap: 'vendor/bootstrap'
     }
 });
 
-require(['jquery', 'views/mainView', 'router'], function ($, MainView, Router) {
+require(['jquery', 'views/mainView', 'router', 'bootstrap'], function ($, MainView, Router, Bootstrap) {
     "use strict";
 
     var mainView = new MainView();

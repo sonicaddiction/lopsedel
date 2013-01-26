@@ -1,10 +1,20 @@
-<div class="headlineContainer">
-    <h1>LÖPSEDELSADMINISTRATION</h1>
-    <p>Välj en ordklass för att administrera</p>
-    <ul id="expressionTypefilterList"></ul>
-    <div id="addExpressionGroup" style="display: none;">
-        <input id="expressionInput" placeholder="Write the expression here..."></input>
-        <button id="addExpression">Add expression</button>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <ul id="expressionTypefilterList" class="nav nav-list">
+                <li class="nav-header">Uttryckstyper</li>
+            </ul>
+        </div>
+        <div class="span6">
+            <div id="addExpressionGroup" class="input-append" style="display: none;">
+                <input type="text" id="expressionInput" placeholder="Lägg till ett nytt ord..."></input>
+                <button class="btn" id="addExpression" type="button">Lägg till ord</button>
+            </div>
+            <ul id="wordClassList" class="unstyled"></ul>
+        </div>
+        <div class="span3">
+            <p class="lead">Exempelmening:</p>
+            <p id="exampleSentence"></p>
+        </div>
     </div>
-    <ul id="wordClassList"></ul>
 </div>
